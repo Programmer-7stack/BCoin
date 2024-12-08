@@ -1,0 +1,431 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Work Sans', sans-serif;
+  color: #ffffff;
+  background: radial-gradient(circle, #121212, #0a0a0a);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+header {
+  background: rgba(30, 30, 30, 0.9);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+header.sticky {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+header .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo img {
+  width: 40px;
+  margin-right: 10px;
+}
+
+header .logo a {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #ff6a00;
+}
+
+header nav a {
+  margin-left: 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #aaa;
+  transition: color 0.3s;
+}
+
+header nav a:hover {
+  color: #ffffff;
+}
+
+header .extra-nav button {
+  padding: 10px 20px;
+  border: 2px solid #ff6a00;
+  background: none;
+  color: #ff6a00;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+header .extra-nav button:hover {
+  background-color: #ff6a00;
+  color: #fff;
+}
+
+header .btn-menu .icon {
+  color: #fff;
+  font-size: 1.5rem;
+  display: none;
+}
+
+/* Mobile Header */
+@media (max-width: 768px) {
+  header .content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header .logo {
+    margin-bottom: 10px;
+  }
+
+  header nav {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  header nav.open {
+    display: block;
+  }
+
+  header .btn-menu .icon {
+    display: block;
+    cursor: pointer;
+  }
+}
+
+/* Hero Section */
+.hero {
+  padding: 120px 0 100px 0;
+  text-align: center;
+  position: relative;
+}
+
+.hero .content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #ff6a00;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.hero .input {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.hero .input input {
+  padding: 10px;
+  font-size: 1rem;
+  width: 250px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  color: #fff;
+  background: transparent;
+}
+
+.hero .input button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #ff6a00;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hero .input button:hover {
+  background-color: #ff4500;
+}
+
+/* Table Section */
+#crypto-section {
+  padding: 80px 0;
+}
+
+.table-container {
+  text-align: center;
+}
+
+.table-container h2 {
+  font-size: 2rem;
+  color: #ff6a00;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table th,
+table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #444;
+}
+
+table th {
+  background-color: #333;
+  color: #ff6a00;
+}
+
+table td {
+  background-color: #222;
+}
+
+@media (max-width: 768px) {
+  table th, table td {
+    font-size: 0.9rem;
+  }
+}
+
+/* Tracker Section */
+#bcoin-price-tracker {
+  background-color: #1a1a1a;
+  padding: 50px 0;
+}
+
+#bcoin-price-tracker h2 {
+  font-size: 2rem;
+  color: #ff6a00;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#bcoin-price {
+  font-size: 1.5rem;
+  color: #fff;
+  text-align: center;
+}
+
+#bcoin-price p {
+  margin: 10px 0;
+}
+
+#price-fluctuation {
+  font-weight: bold;
+}
+
+/* Investment Calculator */
+#investment-calculator {
+  padding: 50px 0;
+  background-color: #121212;
+}
+
+#investment-calculator h2 {
+  font-size: 2rem;
+  color: #ff6a00;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.calculator {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.calculator input {
+  padding: 10px;
+  font-size: 1rem;
+  width: 250px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  color: #fff;
+  background: transparent;
+}
+
+.calculator button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #ff6a00;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.calculator button:hover {
+  background-color: #ff4500;
+}
+
+#result {
+  font-size: 1.2rem;
+  color: #fff;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Community Stats Section */
+#bcoin-community-stats {
+  padding: 50px 0;
+  background-color: #1a1a1a;
+}
+
+#bcoin-community-stats h2 {
+  font-size: 2rem;
+  color: #ff6a00;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.stat {
+  background-color: #222;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  flex: 1 1 250px;
+}
+
+.stat p {
+  font-size: 1.2rem;
+  color: #aaa;
+}
+
+.stat span {
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Footer Section */
+footer {
+  background: #121212;
+  padding: 40px 0;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 50px;
+}
+
+footer .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer .content {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+footer .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+footer .logo img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+footer .logo a {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #ff6a00;
+}
+
+footer .social {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+footer .social a {
+  color: #fff;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+footer .social a:hover {
+  color: #ff6a00;
+}
+
+/* Scroll-trigger logic for table animation */
+#crypto-table.active {
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+  header nav.open {
+    display: flex;
+  }
+}
+
+
