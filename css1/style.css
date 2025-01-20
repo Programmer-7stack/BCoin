@@ -14,8 +14,6 @@ body {
   line-height: 1.6;
 }
 
-
-
 .container {
   width: 90%;
   max-width: 1200px;
@@ -34,18 +32,14 @@ header {
   transition: all 0.3s ease;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-header .sticky {
-  background: rgba(0, 0, 0, 0.9);
-}
-
 header .content {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  display: flex;
   align-items: center;
 }
 
@@ -58,14 +52,21 @@ header .logo a {
   font-size: 1.8rem;
   font-weight: 600;
   color: #ff6a00;
+  text-decoration: none;
+}
+
+/* Header Navigation */
+header nav {
+  display: flex;
+  gap: 20px;
 }
 
 header nav a {
-  margin-left: 20px;
   font-size: 1rem;
   font-weight: 500;
   color: #aaa;
   transition: color 0.3s;
+  text-decoration: none;
 }
 
 header nav a:hover {
@@ -88,31 +89,28 @@ header .extra-nav button:hover {
   color: #fff;
 }
 
-
 /* Mobile Header */
 @media (max-width: 768px) {
-  header .content {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  header .logo {
-    margin-bottom: 10px;
-  }
-
   header nav {
-    display: none;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
+    display: none; /* Hide navigation on mobile */
   }
 
-  header .btn-menu .icon {
-    display: block;
-    cursor: pointer;
+  header .content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  header .extra-nav {
+    display: flex;
+    align-items: center;
+  }
+
+  header .extra-nav button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
   }
 }
-
 
 /* Hero Section */
 .hero {
@@ -177,6 +175,174 @@ header .extra-nav button:hover {
   background-color: #ff4500;
 }
 
+/* Table Section */
+#crypto-section {
+  padding: 80px 0;
+}
+
+.table-container {
+  text-align: center;
+  overflow-x: auto;
+}
+
+.table-container h2 {
+  font-size: 2rem;
+  color: #ff6a00;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  min-width: 600px;
+}
+
+table th,
+table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #444;
+}
+
+table th {
+  background-color: #333;
+  color: #ff6a00;
+}
+
+table td {
+  background-color: #222;
+}
+
+#crypto-table.active {
+  animation: fadeIn 1s ease-in;
+}
+
+/* Tracker Section */
+#bcoin-price-tracker {
+  background-color: #1a1a1a;
+  padding: 50px 0;
+}
+
+#bcoin-price-tracker h2 {
+  font-size: 2rem;
+  color: #ff6a00;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#bcoin-price {
+  font-size: 1.5rem;
+  color: #fff;
+  text-align: center;
+}
+
+#bcoin-price p {
+  margin: 10px 0;
+}
+
+#price-fluctuation {
+  font-weight: bold;
+}
+
+/* Investment Calculator Section */
+#investment-calculator {
+  padding: 50px 0;
+  background-color: #121212;
+}
+
+#investment-calculator h2 {
+  font-size: 2rem;
+  color: #ff6a00;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
+.calculator input {
+  padding: 10px;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 300px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  color: #fff;
+  background: transparent;
+}
+
+.calculator button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #ff6a00;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  max-width: 300px;
+}
+
+.calculator button:hover {
+  background-color: #ff4500;
+}
+
+#result {
+  font-size: 1.2rem;
+  color: #fff;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Community Stats Section */
+#bcoin-community-stats {
+  padding: 50px 0;
+  background-color: #1a1a1a;
+}
+
+#bcoin-community-stats h2 {
+  font-size: 2rem;
+  color: #ff6a00;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.stat {
+  background-color: #222;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  flex: 1 1 250px;
+  min-width: 200px;
+}
+
+.stat p {
+  font-size: 1.2rem;
+  color: #aaa;
+}
+
+.stat span {
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: bold;
+}
 
 /* Footer Section */
 footer {
@@ -219,202 +385,7 @@ footer .logo a {
   font-size: 1.8rem;
   font-weight: 600;
   color: #ff6a00;
-}
-
-footer .social {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 20px;
-}
-
-footer .social a {
-  color: #fff;
-  font-size: 1.5rem;
-  transition: color 0.3s ease;
-}
-
-footer .social a:hover {
-  color: #ff6a00;
-}
-
-
-
-
-/* Table Section */
-#crypto-section {
-  padding: 80px 0;
-}
-
-.table-container {
-  text-align: center;
-}
-
-.table-container h2 {
-  font-size: 2rem;
-  color: #ff6a00;
-  margin-bottom: 20px;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-
-table th,
-table td {
-  padding: 10px;
-  text-align: left;
-  border: 1px solid #444;
-}
-
-table th {
-  background-color: #333;
-  color: #ff6a00;
-}
-
-table td {
-  background-color: #222;
-}
-
-@media (max-width: 768px) {
-  table th, table td {
-    font-size: 0.9rem;
-  }
-}
-
-
-
-/* Tracker Section */
-#bcoin-price-tracker {
-  background-color: #1a1a1a;
-  padding: 50px 0;
-}
-
-#bcoin-price-tracker h2 {
-  font-size: 2rem;
-  color: #ff6a00;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-#bcoin-price {
-  font-size: 1.5rem;
-  color: #fff;
-  text-align: center;
-}
-
-#bcoin-price p {
-  margin: 10px 0;
-}
-
-#price-fluctuation {
-  font-weight: bold;
-}
-
-
-
-
-/* Investment Calculator Section */
-#investment-calculator {
-  padding: 50px 0;
-  background-color: #121212;
-}
-
-#investment-calculator h2 {
-  font-size: 2rem;
-  color: #ff6a00;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.calculator {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.calculator input {
-  padding: 10px;
-  font-size: 1rem;
-  width: 250px;
-  border: 2px solid #fff;
-  border-radius: 5px;
-  color: #fff;
-  background: transparent;
-}
-
-.calculator button {
-  padding: 10px 20px;
-  font-size: 1rem;
-  background-color: #ff6a00;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.calculator button:hover {
-  background-color: #ff4500;
-}
-
-#result {
-  font-size: 1.2rem;
-  color: #fff;
-  text-align: center;
-  margin-top: 20px;
-}
-
-
-
-/* Community Stats Section */
-#bcoin-community-stats {
-  padding: 50px 0;
-  background-color: #1a1a1a;
-}
-
-#bcoin-community-stats h2 {
-  font-size: 2rem;
-  color: #ff6a00;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.stats {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 20px;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.stat {
-  background-color: #222;
-  padding: 20px;
-  border-radius: 5px;
-  text-align: center;
-  flex: 1 1 250px;
-}
-
-.stat p {
-  font-size: 1.2rem;
-  color: #aaa;
-}
-
-.stat span {
-  font-size: 1.5rem;
-  color: #fff;
-  font-weight: bold;
-}
-
-
-
-/* Scroll-trigger logic for table animation */
-#crypto-table.active {
-  animation: fadeIn 1s ease-in;
+  text-decoration: none;
 }
 
 @keyframes fadeIn {
@@ -428,5 +399,24 @@ table td {
   }
 }
 
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
 
+  .hero h2 {
+    font-size: 1.5rem;
+  }
 
+  .hero .input {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero .input input,
+  .hero .input button {
+    width: 100%;
+    max-width: 300px;
+  }
+}
