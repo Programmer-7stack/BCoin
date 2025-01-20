@@ -127,8 +127,3 @@ document.getElementById('calculate-btn').addEventListener('click', () => {
   }
 });
 
-// Mobile menu toggle script (if you plan to use a hamburger menu)
-document.querySelector('.btn-menu .icon').addEventListener('click', () => {
-  const nav = document.querySelector('header nav');
-  nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
-});
